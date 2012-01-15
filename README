@@ -1,14 +1,6 @@
-design/comments/disclaimers: the servlet provides functionality for two clients with no observers (I did not implement 
-adding an observer due to the fact that if they join late, I would need a way to push all previous moves). each client 
-has the ability to reset the game locally and on the server so that a new game can be started at any time. validation 
-is only done on the client due to a problem I encountered with resolving the file path to Move.xsd on the server. if 
-the game is not reset, the session will continue until a winner has been determined at which point each client will be 
-notified and the only option left will be to reset.
+design/comments/disclaimers: the servlet provides functionality for two clients with no observers (I did not implement adding an observer due to the fact that if they join late, I would need a way to push all previous moves). each client has the ability to reset the game locally and on the server so that a new game can be started at any time. validation is only done on the client due to a problem I encountered with resolving the file path to Move.xsd on the server. if the game is not reset, the session will continue until a winner has been determined at which point each client will be notified and the only option left will be to reset.
 
-xml: the protocol I chose was <x,y,color> to pass moves back and forth from client to server. however I then reused the 
-color field to pass additional messages like "wait," "observer," and "gameover" in order to conserve the need for 
-additional overhead. this definitely leads to confusion but was only done in the interest of time (as most projects will 
-encounter the perfection vs. time balance).
+xml: the protocol I chose was <x,y,color> to pass moves back and forth from client to server. however I then reused the color field to pass additional messages like "wait," "observer," and "gameover" in order to conserve the need for additional overhead. this definitely leads to confusion but was only done in the interest of time (as most projects will encounter the perfection vs. time balance).
 
 Regards,
 James
